@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Search from './components/Search';
 import ItemList from './components/ItemList';
 import Buttons from './components/Buttons';
-import Modal from './components/Modal';
+import AddItemModal from './components/AddItemModal';
 import { Provider, Consumer } from './context';
 
 export default class App extends Component {
@@ -17,9 +17,11 @@ export default class App extends Component {
           <Buttons />
         </div>
         <Consumer>
-          {({ state: { isModalOpen }, actions: { addItem } }) => (
-            <Modal isOpen={isModalOpen} addItem={addItem} />
-          )}
+          {({ state: { isModalOpen }, actions: { addItem, toggleModal } }) =>
+            isModalOpen ? (
+              <AddItemModal toggleModal={toggleModal} addItem={addItem} />
+            ) : null
+          }
         </Consumer>
       </Provider>
     );

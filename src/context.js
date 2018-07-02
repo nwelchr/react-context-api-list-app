@@ -13,17 +13,22 @@ export class Provider extends Component {
     this.toggleItem = this.toggleItem.bind(this);
     this.changeAll = this.changeAll.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       items: [],
-      isModalOpen: false
+      isModalOpen: false,
+      searchQuery: '',
+      addItemTitle: '',
+      addItemBody: ''
     };
 
     this.actions = {
       addItem: this.addItem,
       toggleItem: this.toggleItem,
       changeAll: this.changeAll,
-      toggleModal: this.toggleModal
+      toggleModal: this.toggleModal,
+      handleChange: this.handleChange
     };
 
     // define namespace for setting values in localStorage
@@ -41,10 +46,19 @@ export class Provider extends Component {
     this.setState({ items });
   }
 
-  addItem(item) {
+  addItem() {
+    const { addItemTitle: title, addItemBody: body } = this.state;
+    if (!(title && body)) return;
+    const item = {
+      title: this.state.addItemTitle,
+      body: this.state.addItemBody,
+      expanded: false
+    };
     const items = this.state.items;
     const newItems = [...items, item];
     this.inform(newItems);
+    this.setState({ addItemTitle: '', addItemBody: '' });
+    this.toggleModal();
   }
 
   toggleItem(key) {
@@ -70,6 +84,10 @@ export class Provider extends Component {
 
   toggleModal() {
     this.setState({ isModalOpen: !this.state.isModalOpen });
+  }
+
+  handleChange(type, value) {
+    this.setState({ [type]: value });
   }
 
   render() {

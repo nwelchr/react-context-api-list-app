@@ -5,10 +5,10 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  color: white;
 }
 
 body {
-  color: white;
   height: 100vh;
   background: linear-gradient(116deg, #0699cd, #3bb85c);
   background-color: #0699cd;
@@ -90,10 +90,7 @@ header {
   transform: scale(1);
 }
 
-.item-list,
-.search,
-.add-item-title,
-.add-item-body {
+.item-list {
   width: 400px;
   height: 400px;
   transition: 0.1s ease;
@@ -119,17 +116,19 @@ header {
 }
 
 .search {
+  width: 400px;
+  box-sizing: border-box;
   height: 40px;
   display: flex;
   align-items: flex-end;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5px;
 }
 
 .search::-webkit-input-placeholder,
 .add-item-title::-webkit-input-placeholder,
 .add-item-body::-webkit-input-placeholder {
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   letter-spacing: -1px;
 }
@@ -148,7 +147,7 @@ header {
 .add-item-title:focus,
 .add-item-body:hover,
 .add-item-body:focus {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .item-list {
@@ -166,18 +165,18 @@ header {
 }
 
 .list-item {
-  margin-top: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
   padding: 4px 8px;
   box-sizing: border-box;
   max-height: 50px;
   overflow: hidden;
   transition: 0.3s ease;
   transform: scale(1);
+  margin-bottom: 5px;
 }
 
-.list-item:first-child {
-  margin-top: 0px;
+.list-item:last-child {
+  margin-bottom: 0px;
 }
 
 .list-item.expanded {
@@ -191,7 +190,9 @@ header {
 }
 
 .title {
-  font-size: 26px;
+  font-size: 25px;
+  padding: 8px 0px;
+  line-height: 25px;
 }
 
 .buttons {
@@ -215,13 +216,13 @@ header {
 
 .buttons button:hover,
 .add-item-modal button:hover {
-  background-color: #0699cd;
+  background-color: rgba(255, 255, 255, 0.05);
   transition: 0.1s ease;
   cursor: pointer;
 }
 
 .buttons button:active,
-.add-item-modal button:hover {
+.add-item-modal button:active {
   opacity: 0.8;
   transform: scale(0.99);
   transition: 0.2s ease;
@@ -233,8 +234,12 @@ header {
 
 .add-button button,
 .add-item-modal button {
-  margin: 0px;
+  margin: 0 auto;
+  vertical-align: middle;
+  display: inline-block;
   width: 40px;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .modal-background {
@@ -282,12 +287,8 @@ header {
   font-size: 15px;
 }
 
-.add-item-modal button,
-.add-item-modal button:hover,
-.add-item-modal button:active {
-  transform: scale(0.8);
-}
-
-.add-item-modal p {
-  transform: scale(2);
+.add-item-modal button {
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
 }

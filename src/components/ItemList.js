@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import { Consumer } from '../context';
 
 export default class ItemList extends Component {
-  renderListItems(items, toggleItem) {
+  renderListItems(items, searchQuery, toggleItem) {
     if (items)
       return items.map((item, key) => {
+        if (
+          !(
+            item.title.toLowerCase().includes(searchQuery) ||
+            item.body.toLowerCase().includes(searchQuery)
+          )
+        )
+          return;
         const expanded = item.expanded ? 'expanded' : '';
         let title = item.title;
         if (!expanded && item.title.length > 24) {
@@ -26,8 +33,8 @@ export default class ItemList extends Component {
     return (
       <main className="item-list">
         <Consumer>
-          {({ state: { items }, actions: { toggleItem } }) =>
-            this.renderListItems(items, toggleItem)
+          {({ state: { items, searchQuery }, actions: { toggleItem } }) =>
+            this.renderListItems(items, searchQuery, toggleItem)
           }
         </Consumer>
       </main>
