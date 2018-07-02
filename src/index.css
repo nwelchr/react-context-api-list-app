@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  color: white;
+  height: 100vh;
+  background: linear-gradient(116deg, #0699cd, #3bb85c);
+  background-color: #0699cd;
+  background-size: 200% 200%;
+  animation: gradient 20s ease infinite;
+
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14.25px;
+  line-height: 1.66667;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.logo:hover,
+.github:hover {
+  transition: 0.2s ease;
+  transform: scale(0.96);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.logo-img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.github {
+  width: 40px;
+  height: 40px;
+}
+
+.verbling {
+  font-size: 50px;
+  letter-spacing: -2px;
+  transform: scale(1);
+}
+
+.item-list,
+.search,
+.add-item-title,
+.add-item-body {
+  width: 400px;
+  height: 400px;
+  transition: 0.1s ease;
+  box-sizing: border-box;
+  color: white;
+  padding: 5px;
+}
+
+.item-list,
+.search,
+.buttons {
+  margin-top: 10px;
+}
+
+.item-list,
+.search,
+.buttons button,
+.add-item-title,
+.add-item-body,
+.add-item-modal button {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.search::-webkit-input-placeholder,
+.add-item-title::-webkit-input-placeholder,
+.add-item-body::-webkit-input-placeholder {
+  font-size: 30px;
+  color: white;
+  letter-spacing: -1px;
+}
+
+.add-item-title::-webkit-input-placeholder {
+  font-size: 20px;
+}
+
+.add-item-body::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
+.search:hover,
+.search:focus,
+.add-item-title:hover,
+.add-item-title:focus,
+.add-item-body:hover,
+.add-item-body:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.item-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.item-list::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+}
+.item-list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list-item {
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  box-sizing: border-box;
+  max-height: 50px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  transform: scale(1);
+}
+
+.list-item:first-child {
+  margin-top: 0px;
+}
+
+.list-item.expanded {
+  transition: 0.3s ease;
+  max-height: 100%;
+}
+
+.list-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(0.99);
+}
+
+.title {
+  font-size: 26px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons button,
+.add-item-modal button {
+  color: white;
+  height: 40px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: 0.5s ease;
+  display: block;
+}
+
+.buttons button:hover,
+.add-item-modal button:hover {
+  background-color: #0699cd;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.buttons button:active,
+.add-item-modal button:hover {
+  opacity: 0.8;
+  transform: scale(0.99);
+  transition: 0.2s ease;
+}
+
+.toggle-buttons {
+  display: flex;
+}
+
+.add-button button,
+.add-item-modal button {
+  margin: 0px;
+  width: 40px;
+}
+
+.modal-background {
+  position: absolute;
+  margin-left: 350px;
+  margin-top: 75px;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  background-image: url('./images/modal-border.png');
+  background-size: 250px 350px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.add-item-modal {
+  height: 305px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-item-modal h1 {
+  font-size: 25px;
+}
+
+.add-item-title,
+.add-item-body {
+  padding: 5px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.add-item-title {
+  height: 35px;
+  font-size: 20px;
+}
+
+.add-item-body {
+  height: 175px;
+  resize: none;
+  font-size: 15px;
+}
+
+.add-item-modal button,
+.add-item-modal button:hover,
+.add-item-modal button:active {
+  transform: scale(0.8);
+}
+
+.add-item-modal p {
+  transform: scale(2);
+}
