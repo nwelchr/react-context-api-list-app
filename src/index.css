@@ -109,7 +109,7 @@ header {
 .search,
 .buttons button,
 .add-item-title,
-.add-item-body,
+.add-item-description,
 .add-item-modal button {
   border: 1px solid white;
   background-color: rgba(255, 255, 255, 0.1);
@@ -127,7 +127,7 @@ header {
 
 .search::-webkit-input-placeholder,
 .add-item-title::-webkit-input-placeholder,
-.add-item-body::-webkit-input-placeholder {
+.add-item-description::-webkit-input-placeholder {
   font-size: 25px;
   color: white;
   letter-spacing: -1px;
@@ -137,7 +137,7 @@ header {
   font-size: 20px;
 }
 
-.add-item-body::-webkit-input-placeholder {
+.add-item-description::-webkit-input-placeholder {
   font-size: 15px;
 }
 
@@ -145,8 +145,8 @@ header {
 .search:focus,
 .add-item-title:hover,
 .add-item-title:focus,
-.add-item-body:hover,
-.add-item-body:focus {
+.add-item-description:hover,
+.add-item-description:focus {
   background: radial-gradient(rgba(255, 255, 255, 0.1), transparent);
 }
 
@@ -190,8 +190,8 @@ header {
 }
 
 .title {
-  font-size: 25px;
-  padding: 8px 0px;
+  font-size: 20px;
+  padding: 9px 0px;
   line-height: 25px;
 }
 
@@ -270,7 +270,7 @@ header {
 }
 
 .add-item-title,
-.add-item-body {
+.add-item-description {
   padding: 5px;
   width: 90%;
   box-sizing: border-box;
@@ -281,7 +281,7 @@ header {
   font-size: 20px;
 }
 
-.add-item-body {
+.add-item-description {
   height: 175px;
   resize: none;
   font-size: 15px;
@@ -291,4 +291,26 @@ header {
   width: 30px;
   height: 30px;
   line-height: 20px;
+}
+
+.close-modal-button {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  transform: scale(1);
+  transition: transform 0.05s ease;
+}
+
+.close-modal-button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.close-modal-button:active {
+  opacity: 0.8;
+}
+
+.close-modal-button img {
+  width: 14px;
+  height: 14px;
 }

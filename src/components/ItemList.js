@@ -9,7 +9,7 @@ export default class ItemList extends Component {
         if (
           !(
             item.title.toLowerCase().includes(searchQuery) ||
-            item.body.toLowerCase().includes(searchQuery)
+            item.description.toLowerCase().includes(searchQuery)
           )
         )
           return;
@@ -28,7 +28,7 @@ export default class ItemList extends Component {
             className={`list-item ${expanded}`}
             onClick={() => toggleItem(key)}>
             <h2 className="title">{title}</h2>
-            <p>{item.body}</p>
+            <p>{item.description}</p>
           </li>
         );
       });

@@ -17,10 +17,8 @@ export default class App extends Component {
           <Buttons />
         </div>
         <Consumer>
-          {({ state: { isModalOpen }, actions: { addItem, toggleModal } }) =>
-            isModalOpen ? (
-              <AddItemModal toggleModal={toggleModal} addItem={addItem} />
-            ) : null
+          {({ state: { isModalOpen } }) =>
+            isModalOpen ? <AddItemModal /> : null
           }
         </Consumer>
       </Provider>

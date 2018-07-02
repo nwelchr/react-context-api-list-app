@@ -5,7 +5,7 @@ export default class Button extends Component {
   render() {
     return (
       <Consumer>
-        {({ actions: { changeAll, toggleModal } }) => (
+        {({ state: { isModalOpen }, actions: { changeAll, toggleModal } }) => (
           <footer className="buttons">
             <nav className="toggle-buttons">
               <button onClick={() => changeAll('expand')}>Open All</button>
@@ -13,7 +13,8 @@ export default class Button extends Component {
               <button onClick={() => changeAll('toggle')}>Toggle All</button>
             </nav>
             <nav className="add-button">
-              <button onClick={toggleModal}>+</button>
+              {/* only opens modal if not already open */}
+              <button onClick={() => !isModalOpen && toggleModal()}>+</button>
             </nav>
           </footer>
         )}
