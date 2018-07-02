@@ -5,6 +5,7 @@ export default class ItemList extends Component {
   renderListItems(items, searchQuery, toggleItem) {
     if (items)
       return items.map((item, key) => {
+        // filters items by search query
         if (
           !(
             item.title.toLowerCase().includes(searchQuery) ||
@@ -12,7 +13,11 @@ export default class ItemList extends Component {
           )
         )
           return;
+
+        // CSS class variable that controls whether item is expanded
         const expanded = item.expanded ? 'expanded' : '';
+
+        // truncates items if needed
         let title = item.title;
         if (!expanded && item.title.length > 24) {
           title = item.title.substring(0, 24) + '...';

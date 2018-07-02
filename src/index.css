@@ -147,7 +147,7 @@ header {
 .add-item-title:focus,
 .add-item-body:hover,
 .add-item-body:focus {
-  background-color: rgba(255, 255, 255, 0.05);
+  background: radial-gradient(rgba(255, 255, 255, 0.1), transparent);
 }
 
 .item-list {
@@ -157,7 +157,7 @@ header {
 
 .item-list::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 5px;
+  width: 4px;
 }
 .item-list::-webkit-scrollbar-thumb {
   border-radius: 4px;
@@ -170,7 +170,8 @@ header {
   box-sizing: border-box;
   max-height: 50px;
   overflow: hidden;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    max-height 0.5s ease;
   transform: scale(1);
   margin-bottom: 5px;
 }
@@ -180,7 +181,6 @@ header {
 }
 
 .list-item.expanded {
-  transition: 0.3s ease;
   max-height: 100%;
 }
 
