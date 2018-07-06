@@ -7,7 +7,7 @@
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
-  "homepage": "https://nwelchr.github.io/react-context-api-list-app",
+  "homepage": "https://nwelchr.github.io/verbling-challenge",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -15,5 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }

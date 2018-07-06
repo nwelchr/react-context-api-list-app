@@ -90,15 +90,6 @@ header {
   transform: scale(1);
 }
 
-.item-list {
-  width: 400px;
-  height: 400px;
-  transition: 0.1s ease;
-  box-sizing: border-box;
-  color: white;
-  padding: 5px;
-}
-
 .item-list,
 .search,
 .buttons {
@@ -151,6 +142,12 @@ header {
 }
 
 .item-list {
+  width: 400px;
+  height: 400px;
+  transition: 0.1s ease;
+  box-sizing: border-box;
+  color: white;
+  padding: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -170,8 +167,7 @@ header {
   box-sizing: border-box;
   max-height: 50px;
   overflow: hidden;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    max-height 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   transform: scale(1);
   margin-bottom: 5px;
 }
@@ -187,6 +183,7 @@ header {
 .list-item:hover {
   background-color: rgba(255, 255, 255, 0.05);
   transform: scale(0.99);
+  cursor: pointer;
 }
 
 .title {
@@ -258,7 +255,7 @@ header {
 
 .add-item-modal {
   height: 305px;
-  overflow-y: scroll;
+  overflow: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,8 +292,8 @@ header {
 
 .close-modal-button {
   position: absolute;
-  right: 6px;
-  top: 6px;
+  right: 15px;
+  top: 15px;
   transform: scale(1);
   transition: transform 0.05s ease;
 }

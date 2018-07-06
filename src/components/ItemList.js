@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Consumer } from '../context';
+import { Consumer } from '../Context';
 
 export default class ItemList extends Component {
-  renderListItems(items, searchQuery, toggleItem) {
+  renderListItems(items, searchQuery, toggleItem, removeItem) {
     if (items)
       return items.map((item, key) => {
         // filters items by search query
@@ -19,14 +19,18 @@ export default class ItemList extends Component {
 
         // truncates items if needed
         let title = item.title;
-        if (!expanded && item.title.length > 24) {
-          title = item.title.substring(0, 24) + '...';
+        if (!expanded && item.title.length > 33) {
+          title = item.title.substring(0, 33) + '...';
         }
         return (
           <li
             key={key}
             className={`list-item ${expanded}`}
-            onClick={() => toggleItem(key)}>
+            onClick={() => toggleItem(key)}
+            onContextMenu={e => {
+              e.preventDefault();
+              removeItem(key);
+            }}>
             <h2 className="title">{title}</h2>
             <p>{item.description}</p>
           </li>
@@ -38,8 +42,11 @@ export default class ItemList extends Component {
     return (
       <main className="item-list">
         <Consumer>
-          {({ state: { items, searchQuery }, actions: { toggleItem } }) =>
-            this.renderListItems(items, searchQuery, toggleItem)
+          {({
+            state: { items, searchQuery },
+            actions: { toggleItem, removeItem }
+          }) =>
+            this.renderListItems(items, searchQuery, toggleItem, removeItem)
           }
         </Consumer>
       </main>

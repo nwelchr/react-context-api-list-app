@@ -15,7 +15,7 @@ Create a simple scrollable/searchable list where list items can be expanded and 
 - [x] UI should include an "Expand all" button should expand all list items
 - [x] UI should include a "Collapse all" button should collapse all list items
 - [x] UI should include a "Toggle all" button should toggle the expanded/collapsed state of all items.
-- Data and View layers should be organized and efficiently structured to meet the needs of the app
+- [x] Data and View layers should be organized and efficiently structured to meet the needs of the app
 
 ### Submission Instructions
 

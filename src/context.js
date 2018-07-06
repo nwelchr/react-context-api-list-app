@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getStore, setStore } from './utils';
+import defaultData from './defaultData.json';
 
 // create context, which has a Provider and Consumer
 const AppContext = React.createContext();
@@ -11,6 +12,7 @@ export class Provider extends Component {
 
     // bind functions to class to allow this.setState
     this.addItem = this.addItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
     this.toggleItem = this.toggleItem.bind(this);
     this.changeAll = this.changeAll.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
@@ -28,6 +30,7 @@ export class Provider extends Component {
     // declare actions (similar to Redux)
     this.actions = {
       addItem: this.addItem,
+      removeItem: this.removeItem,
       toggleItem: this.toggleItem,
       changeAll: this.changeAll,
       toggleModal: this.toggleModal,
@@ -40,7 +43,10 @@ export class Provider extends Component {
 
   componentDidMount() {
     // fetch items from localStorage
-    const items = getStore(this.namespace);
+    let items = getStore(this.namespace);
+    if (!items.length) {
+      items = defaultData;
+    }
     this.setState({ items });
   }
 
@@ -64,6 +70,11 @@ export class Provider extends Component {
     this.inform(newItems);
     this.setState({ addItemTitle: '', addItemDescription: '' });
     this.toggleModal();
+  }
+
+  removeItem(key) {
+    const newItems = this.state.items.filter((item, idx) => idx !== key);
+    this.inform(newItems);
   }
 
   toggleItem(key) {

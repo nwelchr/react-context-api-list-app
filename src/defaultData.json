@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Click me!",
+    "description":
+      "You can expand and contract items by clicking on them. Try it out!",
+    "expanded": false
+  },
+  {
+    "title": "I'm a really long title. Click me to see what happens.",
+    "description":
+      "Longer titles get cut off when they're contracted for your convenience. Don't worry, they're not going anywhere! Just toggle your item again to see the title in its full glory.",
+    "expanded": true
+  },
+  {
+    "title": "Delete me!",
+    "description": "Just right-click me and I'll be out of your hair!"
+  },
+  {
+    "title": "Have you seen those 3 buttons below?",
+    "description":
+      "Those allow you to open, close, and toggle your items. Want to close all your items and call it a day? Just click the close button! Or maybe you want to find a specific word, you can always open all your items and search through them to find what you need! Speaking of which...",
+    "expanded": false
+  },
+  {
+    "title": "Did you see the little box above?",
+    "description":
+      "That's the search bar. Automagically find the items you need with a few keystrokes. Search by title or description and watch this baby go!",
+    "expanded": false
+  },
+  {
+    "title": "Oh, and one more thing!",
+    "description":
+      "So there's all this talk about looking at, toggling, and searching through your items... but how do you actually make one? You see that little plus button at the bottom? Click it. You won't be disappointed.",
+    "expanded": false
+  }
+]

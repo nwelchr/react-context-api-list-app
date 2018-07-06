@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Consumer } from '../context';
+import { Consumer } from '../Context';
 
 export default class Button extends Component {
   render() {

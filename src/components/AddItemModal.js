@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react';
-import { Consumer } from '../context';
+import { Consumer } from '../Context';
 import CloseButton from '../images/close.png';
 
 export default class AddItemModal extends Component {

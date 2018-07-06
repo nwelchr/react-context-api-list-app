@@ -4,7 +4,7 @@ import Search from './components/Search';
 import ItemList from './components/ItemList';
 import Buttons from './components/Buttons';
 import AddItemModal from './components/AddItemModal';
-import { Provider, Consumer } from './context';
+import { Provider, Consumer } from './Context';
 
 export default class App extends Component {
   render() {
